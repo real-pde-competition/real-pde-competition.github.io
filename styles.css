@@ -862,7 +862,7 @@ section[id] { scroll-margin-top: 76px; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 24px; font-size: 1rem; }
   .nav-links a::after { display: none; }
-  .nav-links a:hover { background: var(--lavender-light); }
+  .nav-links a:not(.btn-nav):hover { background: var(--lavender-light); }
   .nav-links .btn-nav { margin: 8px 24px; text-align: center; }
   .nav-toggle { display: block; }
 }
@@ -886,7 +886,7 @@ section[id] { scroll-margin-top: 76px; }
   .nav-links.open { display: flex; }
   .nav-links a { padding: 14px 24px; font-size: 1rem; }
   .nav-links a::after { display: none; }
-  .nav-links a:hover { background: var(--lavender-light); }
+  .nav-links a:not(.btn-nav):hover { background: var(--lavender-light); }
   .nav-links .btn-nav { margin: 8px 24px; text-align: center; }
 
   .nav-toggle { display: block; }
