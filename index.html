@@ -47,7 +47,7 @@
       <a href="#resources">Resources</a>
       <a href="#organizers">Organizers</a>
       <a href="https://realpdebench.github.io" target="_blank">RealPDEBench</a>
-      <a href="#" class="btn-nav" target="_blank">Submit on Codabench</a>
+      <a href="#" class="btn-nav is-soon" aria-disabled="true" title="Codabench platform launches with the competition on June 15, 2026">Codabench · Soon</a>
     </div>
   </div>
 </nav>
@@ -74,7 +74,7 @@
     </div>
 
     <div class="hero-actions">
-      <a href="#" class="btn btn-primary" target="_blank">Submit on Codabench</a>
+      <a href="#" class="btn btn-primary is-soon" aria-disabled="true" title="Codabench platform launches with the competition on June 15, 2026">Codabench · Coming Soon</a>
       <a href="https://github.com/AI4Science-WestlakeU/RealPDEBench" class="btn btn-outline" target="_blank">
         <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
         GitHub
@@ -106,7 +106,7 @@
       <div class="feature-card">
         <div class="feature-icon feature-icon--gold">&#x2696;</div>
         <h3>Physics-aware Metrics</h3>
-        <p>Beyond point-wise errors: physics-meaningful evaluation including TKE, lift/drag errors, velocity profiles, efficiency scoring, and a novel Safe Prediction Score for reliability.</p>
+        <p>Beyond point-wise errors: physics-meaningful evaluation including TKE, mean velocity profile, efficiency scoring, and a novel Safe Prediction Score for reliability.</p>
       </div>
     </div>
   </div>
@@ -307,8 +307,9 @@
         <tr><td><strong>Eligibility</strong></td><td>Open to all individuals and academic/industrial teams worldwide.</td></tr>
         <tr><td><strong>Team Size</strong></td><td>Maximum of 3 members per team.</td></tr>
         <tr><td><strong>Submissions</strong></td><td>1 submission per day; 100 total per phase across all participating tracks (per team account).</td></tr>
+        <tr><td><strong>LTTTA Agent Use</strong></td><td>Agent-augmented adaptation (e.g., LLM controllers) is permitted in Track 2. Number of agent interaction steps must be explicitly bounded by the protocol, and all agent computation is included in the runtime evaluation.</td></tr>
         <tr><td><strong>Accounts</strong></td><td>One account per team (shared email). Multiple accounts are strictly prohibited and will result in disqualification.</td></tr>
-        <tr><td><strong>Platform</strong></td><td>All submissions via <a href="#">Codabench</a>. Code must be compatible with PyTorch and follow the starting kit interface.</td></tr>
+        <tr><td><strong>Platform</strong></td><td>All submissions via Codabench (link goes live at competition launch). Code must be compatible with PyTorch and follow the starting kit interface.</td></tr>
         <tr><td><strong>Evaluation</strong></td><td>Public validation set + private test set (unseen parameters, novel angles-of-attack / Reynolds numbers).</td></tr>
         <tr><td><strong>Open Source</strong></td><td>Winners must open-source their complete solution (architecture, training scripts, hyperparameters) no later than 2 weeks before NeurIPS presentation.</td></tr>
         <tr><td><strong>Final Ranking</strong></td><td>Determined solely by the global composite score on all weighted metrics.</td></tr>
@@ -337,7 +338,7 @@
       <div class="feature-card">
         <div class="feature-icon feature-icon--gold">&#x1F4AC;</div>
         <h3>Community</h3>
-        <p>Join our Discord for Q&A, team formation, and technical discussions. Organizers are available throughout the competition. <a href="#">Discord →</a></p>
+        <p>A dedicated Discord channel and contact email will be announced alongside the competition launch — organizers will be available throughout the competition for Q&A, team formation, and technical discussions.</p>
       </div>
     </div>
     <div class="mt-md" style="display:flex; gap:1rem; flex-wrap:wrap;">
@@ -357,46 +358,49 @@
     </p>
 
     <h3 class="organizer-group-title">Lead Organizer</h3>
-    <div class="organizer-grid">
-      <div class="organizer-card">
-        <img src="img/tailin.png" alt="Tailin Wu" class="organizer-photo">
-        <div class="organizer-name">Tailin Wu</div>
-        <div class="organizer-affil">Westlake University · Uniforce AI</div>
-        <div class="organizer-role">Lead organizer</div>
+    <div class="organizer-featured">
+      <div class="organizer-card organizer-card--featured">
+        <img src="img/tailin.png" alt="Tailin Wu" class="organizer-photo organizer-photo--xl">
+        <div class="organizer-body">
+          <div class="organizer-name organizer-name--lg">Tailin Wu</div>
+          <div class="organizer-affil organizer-affil--lg">Westlake University · Founder, Uniforce AI Ltd</div>
+          <p class="organizer-bio">Assistant Professor and PI of the AI for Scientific Simulation and Discovery Lab at Westlake University. Ph.D. from MIT (2019), postdoc at Stanford CS. His work on ML for scientific simulation, design, and generative models has been featured by MIT Technology Review.</p>
+          <div class="organizer-role organizer-role--lead">Lead organizer · wutailin@westlake.edu.cn</div>
+        </div>
       </div>
     </div>
 
     <h3 class="organizer-group-title">Contributors</h3>
-    <div class="organizer-grid">
+    <div class="organizer-grid organizer-grid--contrib">
       <div class="organizer-card">
         <img src="img/wenhao.jpg" alt="Wenhao Deng" class="organizer-photo">
         <div class="organizer-name">Wenhao Deng</div>
         <div class="organizer-affil">University of Glasgow · Westlake University</div>
-        <div class="organizer-role">Website, benchmark codebase, Codabench platform</div>
+        <div class="organizer-role">Website · Benchmark codebase · Codabench platform</div>
       </div>
       <div class="organizer-card">
         <img src="img/haodong.jpg" alt="Haodong Feng" class="organizer-photo">
         <div class="organizer-name">Haodong Feng</div>
         <div class="organizer-affil">Westlake University · ZGCAI</div>
-        <div class="organizer-role">Dataset, evaluation design, baselines</div>
+        <div class="organizer-role">Dataset · Evaluation design · Baselines</div>
       </div>
       <div class="organizer-card">
         <img src="img/ruiqi.jpeg" alt="Ruiqi Feng" class="organizer-photo">
         <div class="organizer-name">Ruiqi Feng</div>
         <div class="organizer-affil">Westlake University</div>
-        <div class="organizer-role">Evaluation pipeline, baselines</div>
+        <div class="organizer-role">Evaluation pipeline · Baselines</div>
       </div>
       <div class="organizer-card">
         <img src="img/tianrun.jpg" alt="Tianrun Gao" class="organizer-photo">
         <div class="organizer-name">Tianrun Gao</div>
         <div class="organizer-affil">Tongji University · Fudan University</div>
-        <div class="organizer-role">Evaluation pipelines, baselines</div>
+        <div class="organizer-role">Evaluation pipelines · Baselines</div>
       </div>
       <div class="organizer-card">
         <img src="img/peiyan.jpeg" alt="Peiyan Hu" class="organizer-photo">
         <div class="organizer-name">Peiyan Hu</div>
         <div class="organizer-affil">AMSS, CAS · Westlake University</div>
-        <div class="organizer-role">Coordination, data, evaluation, proposal</div>
+        <div class="organizer-role">Coordination · Data · Evaluation · Proposal</div>
       </div>
       <div class="organizer-card">
         <img src="img/hongyuan.jpg" alt="Hongyuan Liu" class="organizer-photo">
@@ -408,47 +412,47 @@
         <img src="img/tengfei.jpg" alt="Tengfei Xu" class="organizer-photo">
         <div class="organizer-name">Tengfei Xu</div>
         <div class="organizer-affil">Westlake University</div>
-        <div class="organizer-role">Safe metrics design, evaluation pipeline</div>
+        <div class="organizer-role">Safe metrics design · Evaluation pipeline</div>
       </div>
     </div>
 
     <h3 class="organizer-group-title">Scientific Advisors</h3>
-    <div class="organizer-grid">
+    <div class="organizer-grid organizer-grid--advisor">
       <div class="organizer-card">
-        <img src="img/xinyu.jpeg" alt="Xinyu Yang" class="organizer-photo">
+        <img src="img/xinyu.jpeg" alt="Xinyu Yang" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Xinyu Yang</div>
         <div class="organizer-affil">IHPC, A*STAR</div>
-        <div class="organizer-role">Agent-enhanced adaptation; scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Research Scientist; physics foundation models and agentic AI for scientific workflows. Designs the agent-enhanced adaptation strategies for Track 2.</p>
       </div>
       <div class="organizer-card">
-        <img src="img/zongyi.jpg" alt="Zongyi Li" class="organizer-photo">
+        <img src="img/zongyi.jpg" alt="Zongyi Li" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Zongyi Li</div>
         <div class="organizer-affil">New York University</div>
-        <div class="organizer-role">Scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Assistant Professor of Mathematics and Data Science. Co-creator of the Fourier Neural Operator. Previously postdoc at MIT CSAIL with Kaiming He.</p>
       </div>
       <div class="organizer-card">
-        <img src="img/johannes.jpg" alt="Johannes Brandstetter" class="organizer-photo">
+        <img src="img/johannes.jpg" alt="Johannes Brandstetter" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Johannes Brandstetter</div>
         <div class="organizer-affil">Emmi AI · JKU Linz</div>
-        <div class="organizer-role">Scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Co-founder and Chief Scientist at Emmi AI; Professor at JKU Linz. AI-driven physics surrogates for weather and climate at scale.</p>
       </div>
       <div class="organizer-card">
-        <img src="img/roseyu.png" alt="Rose Yu" class="organizer-photo">
+        <img src="img/roseyu.png" alt="Rose Yu" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Rose Yu</div>
         <div class="organizer-affil">UC San Diego · Amazon Scholar</div>
-        <div class="organizer-role">Scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Associate Professor at UCSD CSE. PECASE, NSF CAREER awardee; MIT Technology Review Innovators Under 35. Spatiotemporal ML for science.</p>
       </div>
       <div class="organizer-card">
-        <img src="img/nils.jpg" alt="Nils Thuerey" class="organizer-photo">
+        <img src="img/nils.jpg" alt="Nils Thuerey" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Nils Thuerey</div>
         <div class="organizer-affil">TU Munich</div>
-        <div class="organizer-role">Scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Associate Professor at TUM. AI for fluids: diffusion modeling, foundation models, and tightly-integrated differentiable numerical simulation.</p>
       </div>
       <div class="organizer-card">
-        <img src="img/anima.jpeg" alt="Anima Anandkumar" class="organizer-photo">
+        <img src="img/anima.jpeg" alt="Anima Anandkumar" class="organizer-photo organizer-photo--lg">
         <div class="organizer-name">Anima Anandkumar</div>
         <div class="organizer-affil">Caltech</div>
-        <div class="organizer-role">Scientific advisor</div>
+        <p class="organizer-bio organizer-bio--sm">Bren Professor at Caltech. Previously Senior Director of AI Research at NVIDIA. Sloan Fellow, IEEE Fellow, NSF CAREER awardee.</p>
       </div>
     </div>
 
@@ -469,8 +473,8 @@
       <a href="https://realpdebench.github.io" target="_blank">RealPDEBench</a>
       <a href="https://github.com/AI4Science-WestlakeU/RealPDEBench" target="_blank">GitHub</a>
       <a href="https://huggingface.co/datasets/AI4Science-WestlakeU/RealPDEBench" target="_blank">Hugging Face</a>
-      <a href="#">Codabench</a>
-      <a href="#">Discord</a>
+      <span class="footer-soon">Codabench · Soon</span>
+      <span class="footer-soon">Discord · Soon</span>
       <a href="mailto:wutailin@westlake.edu.cn">Contact</a>
     </div>
     <p>&copy; 2026 RealPDE Competition &middot; NeurIPS 2026 Competition Track</p>
