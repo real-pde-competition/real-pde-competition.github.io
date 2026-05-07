@@ -16,7 +16,8 @@
   <!-- Fonts (same as RealPDEBench) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=optional">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600;700&display=optional" rel="stylesheet">
 
   <!-- MathJax -->
   <script>
@@ -56,10 +57,7 @@
 <section class="hero" id="hero">
   <canvas id="hero-flow"></canvas>
   <div class="hero-inner">
-    <div class="hero-badge">
-      <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
-      NeurIPS 2026 Competition
-    </div>
+    <div class="hero-badge">NeurIPS 2026 Competition</div>
     <h1><span data-hero-pde>RealPDE</span> <span class="accent-mid">Competition</span></h1>
     <p class="hero-sub">
       Scientific ML for Real-world Physical Systems — the first NeurIPS Scientific ML competition centered on data from real physical systems, with paired real-world and simulated fluid dynamics over the NACA4418 airfoil.
@@ -94,17 +92,14 @@
     </p>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon feature-icon--purple">&#x1D4D3;</div>
         <h3>Paired Real &amp; Simulated Data</h3>
         <p>A new dataset of paired real-world trajectories (PIV measurements) and 3D CFD simulations of cross-sectional flow over the NACA4418 airfoil, spanning diverse angles of attack and Reynolds numbers.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon feature-icon--mint">&#x2699;</div>
         <h3>Two Complementary Tracks</h3>
         <p>Sim2Real transfer learning and Long-Term Test-Time Adaptation (LTTTA), targeting the two core capabilities needed for deployable Scientific ML in real physical systems.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon feature-icon--gold">&#x2696;</div>
         <h3>Physics-aware Metrics</h3>
         <p>Beyond point-wise errors: physics-meaningful evaluation including TKE, mean velocity profile, efficiency scoring, and a novel Safe Prediction Score for reliability.</p>
       </div>
@@ -269,19 +264,19 @@
     <p class="section-subtitle" style="margin-left:auto;margin-right:auto;">Awarded independently per track — compete in both for double the opportunity.</p>
     <div class="prizes-grid">
       <div class="prize-card">
-        <div class="prize-medal">&#x1F947;</div>
+        <div class="prize-rank">01</div>
         <div class="prize-place">1st Place</div>
         <div class="prize-amount prize-amount--gold">$6,000</div>
         <div class="prize-note">per track</div>
       </div>
       <div class="prize-card">
-        <div class="prize-medal">&#x1F948;</div>
+        <div class="prize-rank">02</div>
         <div class="prize-place">2nd Place</div>
         <div class="prize-amount prize-amount--silver">$3,000</div>
         <div class="prize-note">per track</div>
       </div>
       <div class="prize-card">
-        <div class="prize-medal">&#x1F949;</div>
+        <div class="prize-rank">03</div>
         <div class="prize-place">3rd Place</div>
         <div class="prize-amount prize-amount--bronze">$1,500</div>
         <div class="prize-note">per track</div>
@@ -326,17 +321,14 @@
     <p class="section-subtitle">Everything you need to start competing.</p>
     <div class="features-grid">
       <div class="feature-card">
-        <div class="feature-icon feature-icon--purple">&#x1F4D3;</div>
         <h3>Starting Kit</h3>
         <p>Jupyter notebooks covering dataset access, baseline implementations (CNO, FNO, Transolver), and submission templates. Released alongside competition launch. <a href="https://github.com/AI4Science-WestlakeU/RealPDEBench" target="_blank">RealPDEBench codebase →</a></p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon feature-icon--mint">&#x1F3AC;</div>
         <h3>Tutorial Webinars</h3>
         <p>Interactive webinars on competition design, airfoil simulation, and the Codabench submission process. Recordings will be posted here.</p>
       </div>
       <div class="feature-card">
-        <div class="feature-icon feature-icon--gold">&#x1F4AC;</div>
         <h3>Community</h3>
         <p>A dedicated Discord channel and contact email will be announced alongside the competition launch. Organizers will be available throughout the competition for Q&A, team formation, and technical discussions.</p>
       </div>

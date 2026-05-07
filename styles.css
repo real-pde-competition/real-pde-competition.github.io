@@ -553,6 +553,15 @@ img { max-width: 100%; display: block; }
 
 .prize-card:hover { transform: translateY(-3px); }
 .prize-medal { font-size: 2.5rem; margin-bottom: 10px; }
+.prize-rank {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: var(--lavender-dark);
+  line-height: 1;
+  margin-bottom: 14px;
+  letter-spacing: -0.01em;
+}
 .prize-place { font-family: var(--font-serif); font-weight: 700; font-size: 1.15rem; margin-bottom: 6px; }
 
 .prize-amount {
