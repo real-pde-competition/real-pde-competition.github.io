@@ -678,6 +678,67 @@ footer a { color: var(--accent-mid); }
 .mb-sm { margin-bottom: var(--spacing-sm); }
 .divider { width: 60px; height: 3px; background: var(--lavender-main); margin: 20px auto; border-radius: 2px; }
 
+/* ========================================
+   ORGANIZERS
+   ======================================== */
+.organizer-group-title {
+  text-align: center;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.1rem;
+  color: var(--carbon);
+  margin: 36px 0 18px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+.organizer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 22px;
+  max-width: 980px;
+  margin: 0 auto;
+}
+.organizer-card {
+  background: white;
+  border: 1px solid rgba(216, 212, 230, 0.5);
+  border-radius: 12px;
+  padding: 18px 14px 16px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.organizer-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+}
+.organizer-photo {
+  width: 92px;
+  height: 92px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin: 0 auto 12px;
+  display: block;
+  background: var(--lavender-light);
+}
+.organizer-name {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1rem;
+  color: var(--carbon);
+  margin-bottom: 4px;
+}
+.organizer-affil {
+  font-size: 0.8rem;
+  color: var(--slate);
+  line-height: 1.4;
+  margin-bottom: 6px;
+}
+.organizer-role {
+  font-size: 0.75rem;
+  color: var(--accent);
+  font-style: italic;
+  line-height: 1.4;
+}
+
 /* Anchor offset for fixed nav */
 section[id] { scroll-margin-top: 76px; }
 

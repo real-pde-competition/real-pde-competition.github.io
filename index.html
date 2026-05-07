@@ -3,15 +3,15 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>RealPDE Challenge — NeurIPS 2026 Competition</title>
-  <meta name="description" content="NeurIPS 2026 RealPDE Competition: Scientific ML for Real-world Physical Systems. Bridging the sim-to-real gap with paired real-world and simulated data.">
-  <meta property="og:title" content="RealPDE Challenge — NeurIPS 2026 Competition">
-  <meta property="og:description" content="Scientific ML for Real-world Physical Systems — the first competition evaluating machine learning on paired real-world and simulated physical data.">
+  <title>RealPDE Competition — NeurIPS 2026</title>
+  <meta name="description" content="NeurIPS 2026 RealPDE Competition: Scientific ML for Real-world Physical Systems. Paired real-world and simulated fluid dynamics over the NACA4418 airfoil; Sim2Real and Long-Term Test-Time Adaptation tracks.">
+  <meta property="og:title" content="RealPDE Competition — NeurIPS 2026">
+  <meta property="og:description" content="The first NeurIPS Scientific ML competition centered on real physical-systems data — paired real-world (PIV) and simulated (CFD) fluid dynamics over the NACA4418 airfoil.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://w3nhao.github.io/realpde-challenge/">
+  <meta property="og:url" content="https://real-pde-competition.github.io/">
   <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="RealPDE Challenge — NeurIPS 2026 Competition">
-  <meta name="twitter:description" content="Scientific ML for Real-world Physical Systems — the first competition evaluating machine learning on paired real-world and simulated physical data.">
+  <meta name="twitter:title" content="RealPDE Competition — NeurIPS 2026">
+  <meta name="twitter:description" content="The first NeurIPS Scientific ML competition centered on real physical-systems data — paired real-world (PIV) and simulated (CFD) fluid dynamics over the NACA4418 airfoil.">
 
   <!-- Fonts (same as RealPDEBench) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -32,7 +32,7 @@
 <!-- ==================== NAVBAR ==================== -->
 <nav class="navbar">
   <div class="navbar-inner">
-    <a href="#" class="navbar-brand">RealPDEChallenge</a>
+    <a href="#" class="navbar-brand">RealPDECompetition</a>
     <button class="nav-toggle" onclick="document.querySelector('.nav-links').classList.toggle('open')" aria-label="Menu">
       <span></span><span></span><span></span>
     </button>
@@ -45,6 +45,7 @@
       <a href="#prizes">Prizes</a>
       <a href="#rules">Rules</a>
       <a href="#resources">Resources</a>
+      <a href="#organizers">Organizers</a>
       <a href="https://realpdebench.github.io" target="_blank">RealPDEBench</a>
       <a href="#" class="btn-nav" target="_blank">Submit on Codabench</a>
     </div>
@@ -59,9 +60,9 @@
       <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="currentColor"/></svg>
       NeurIPS 2026 Competition
     </div>
-    <h1><span data-hero-pde>RealPDE</span> <span class="accent-mid">Challenge</span></h1>
+    <h1><span data-hero-pde>RealPDE</span> <span class="accent-mid">Competition</span></h1>
     <p class="hero-sub">
-      Scientific ML for Real-world Physical Systems — the first competition evaluating machine learning on paired real-world and simulated physical data.
+      Scientific ML for Real-world Physical Systems — the first NeurIPS Scientific ML competition centered on data from real physical systems, with paired real-world and simulated fluid dynamics over the NACA4418 airfoil.
     </p>
 
     <p class="countdown-target">Competition launches in:</p>
@@ -137,7 +138,8 @@
         <ul>
           <li>Iterative N-step autoregressive prediction with real-time observation integration</li>
           <li>Counteract error accumulation over extended time horizons</li>
-          <li>Model real-world scenarios: sensor monitoring during flight, wind turbine performance tracking</li>
+          <li>Allows agent-augmented adaptation (e.g., LLM-based controllers for adaptive update scheduling, memory retrieval, module selection)</li>
+          <li>Models real-world scenarios: sensor monitoring during flight, wind turbine performance tracking</li>
         </ul>
       </div>
     </div>
@@ -177,28 +179,28 @@
     <p class="section-subtitle">A deployment-oriented evaluation protocol with three dimensions: accuracy, efficiency, and safety.</p>
     <div class="metrics-list">
       <div class="metric-item">
+        <h4>Relative $L_2$ Error</h4>
+        <p>Standard pixel-wise error between predicted and ground-truth physical fields — the core data-fidelity metric.</p>
+      </div>
+      <div class="metric-item">
         <h4>Turbulent Kinetic Energy (TKE)</h4>
-        <p>Relative L2 error of TKE — measures the model's capture of velocity fluctuation energy, a core physical quantity in fluid dynamics.</p>
+        <p>Relative $L_2$ error of TKE — measures how well a model captures velocity-fluctuation energy, a physically interpretable quantity for validating fluid models against real flow behavior.</p>
       </div>
       <div class="metric-item">
-        <h4>Lift &amp; Drag Error</h4>
-        <p>Relative L2 error of lift and drag coefficients ($C_L$, $C_D$) — evaluates the model's understanding of fluid-structure interaction forces.</p>
-      </div>
-      <div class="metric-item">
-        <h4>Mean Velocity Profile Error</h4>
-        <p>MVPE assesses long-term simulation fidelity by comparing time-averaged velocity profiles at multiple probe locations in the wake region.</p>
+        <h4>Mean Velocity Profile Error (MVPE)</h4>
+        <p>Long-horizon evaluation: relative $L_2$ error between time-averaged velocity profiles at probe points (e.g., near the wake region behind the foil).</p>
       </div>
       <div class="metric-item">
         <h4>Time Score (Efficiency)</h4>
-        <p>Sigmoid-shaped normalized runtime metric relative to traditional numerical solvers. Smooth transition from high to low scores around the efficiency threshold.</p>
+        <p>Sigmoid-shaped normalized runtime relative to numerical solvers ($r = t_{\text{neural}} / t_{\text{numerical}}$). Stays high below a runtime threshold, then smoothly penalizes slower models.</p>
       </div>
       <div class="metric-item">
-        <h4>Safe Prediction Score</h4>
-        <p>Jointly evaluates physical accuracy, uncertainty coverage, and interval tightness — penalizing unsafe intervals while rewarding accurate, calibrated predictions.</p>
+        <h4>Safe Prediction Score (SPS)</h4>
+        <p>Jointly evaluates physical accuracy, uncertainty coverage, and interval tightness — penalizing intervals that miss the ground truth and rewarding accurate, tight intervals.</p>
       </div>
       <div class="metric-item">
         <h4>Composite Score</h4>
-        <p>Final ranking metric combining Safe Prediction Score and Time Score, with a safety threshold gate ensuring models must be reliable to benefit from speed.</p>
+        <p>Each metric is mapped to a 0–100 scale (higher is better) and combined as a weighted sum across metrics for the final ranking.</p>
       </div>
     </div>
   </div>
@@ -209,7 +211,7 @@
   <div class="section-inner">
     <div class="section-label">Schedule</div>
     <h2 class="section-title">Timeline</h2>
-    <p class="section-subtitle">19 weeks across three phases, culminating at NeurIPS 2026 in Sydney.</p>
+    <p class="section-subtitle">19 weeks across three phases, culminating at the associated NeurIPS 2026 workshop.</p>
     <div style="max-width: 640px;">
       <div class="timeline">
         <div class="timeline-item">
@@ -252,7 +254,7 @@
           <div class="timeline-dot"></div>
           <div class="timeline-date">December 6, 2026</div>
           <div class="timeline-title">NeurIPS 2026 Presentation</div>
-          <div class="timeline-desc">Results presentation at the associated NeurIPS workshop in Sydney, Australia.</div>
+          <div class="timeline-desc">Results presentation at the associated NeurIPS 2026 workshop (early December).</div>
         </div>
       </div>
     </div>
@@ -269,7 +271,7 @@
       <div class="prize-card">
         <div class="prize-medal">&#x1F947;</div>
         <div class="prize-place">1st Place</div>
-        <div class="prize-amount prize-amount--gold">$5,000</div>
+        <div class="prize-amount prize-amount--gold">$6,000</div>
         <div class="prize-note">per track</div>
       </div>
       <div class="prize-card">
@@ -281,12 +283,12 @@
       <div class="prize-card">
         <div class="prize-medal">&#x1F949;</div>
         <div class="prize-place">3rd Place</div>
-        <div class="prize-amount prize-amount--bronze">$1,000</div>
+        <div class="prize-amount prize-amount--bronze">$1,500</div>
         <div class="prize-note">per track</div>
       </div>
     </div>
     <p style="text-align:center; margin-top: 24px; font-size: 0.9rem; color: var(--slate);">
-      Additionally, winning teams will be invited to present at a dedicated webinar and co-author a joint paper summarizing competition results.
+      Cash prizes funded by Uniforce AI Ltd. Top-5 teams in each track are also invited to present at a dedicated webinar, and all winning teams will be invited to co-author a joint paper summarizing competition results.
     </p>
   </div>
 </section>
@@ -304,7 +306,7 @@
       <tbody>
         <tr><td><strong>Eligibility</strong></td><td>Open to all individuals and academic/industrial teams worldwide.</td></tr>
         <tr><td><strong>Team Size</strong></td><td>Maximum of 3 members per team.</td></tr>
-        <tr><td><strong>Submissions</strong></td><td>10 submissions per day; 500 total per phase across all tracks.</td></tr>
+        <tr><td><strong>Submissions</strong></td><td>1 submission per day; 100 total per phase across all participating tracks (per team account).</td></tr>
         <tr><td><strong>Accounts</strong></td><td>One account per team (shared email). Multiple accounts are strictly prohibited and will result in disqualification.</td></tr>
         <tr><td><strong>Platform</strong></td><td>All submissions via <a href="#">Codabench</a>. Code must be compatible with PyTorch and follow the starting kit interface.</td></tr>
         <tr><td><strong>Evaluation</strong></td><td>Public validation set + private test set (unseen parameters, novel angles-of-attack / Reynolds numbers).</td></tr>
@@ -325,7 +327,7 @@
       <div class="feature-card">
         <div class="feature-icon feature-icon--purple">&#x1F4D3;</div>
         <h3>Starting Kit</h3>
-        <p>Jupyter notebooks covering dataset access, baseline model implementations, and submission templates. <a href="https://github.com/IRT-SystemX/ml4physim_startingkit" target="_blank">View on GitHub →</a></p>
+        <p>Jupyter notebooks covering dataset access, baseline implementations (CNO, FNO, Transolver), and submission templates. Released alongside competition launch. <a href="https://github.com/AI4Science-WestlakeU/RealPDEBench" target="_blank">RealPDEBench codebase →</a></p>
       </div>
       <div class="feature-card">
         <div class="feature-icon feature-icon--mint">&#x1F3AC;</div>
@@ -351,14 +353,111 @@
     <div class="section-label text-center">Team</div>
     <h2 class="section-title text-center">Organizers</h2>
     <p class="section-subtitle" style="margin-left:auto; margin-right:auto;">
-      An interdisciplinary team of experts from top universities spanning AI, fluid dynamics, applied mathematics, and Scientific ML, with 100+ publications in NeurIPS, ICML, ICLR, and leading fluid dynamics journals.
+      An interdisciplinary team of 14 organizers from 10 institutions across 6 countries — spanning AI, fluid dynamics, applied mathematics, and Scientific ML, with 1300+ publications in venues such as NeurIPS, ICML, ICLR, and leading fluid dynamics journals.
     </p>
+
+    <h3 class="organizer-group-title">Lead Organizer</h3>
+    <div class="organizer-grid">
+      <div class="organizer-card">
+        <img src="img/tailin.png" alt="Tailin Wu" class="organizer-photo">
+        <div class="organizer-name">Tailin Wu</div>
+        <div class="organizer-affil">Westlake University · Uniforce AI</div>
+        <div class="organizer-role">Lead organizer</div>
+      </div>
+    </div>
+
+    <h3 class="organizer-group-title">Contributors</h3>
+    <div class="organizer-grid">
+      <div class="organizer-card">
+        <img src="img/wenhao.jpg" alt="Wenhao Deng" class="organizer-photo">
+        <div class="organizer-name">Wenhao Deng</div>
+        <div class="organizer-affil">University of Glasgow · Westlake University</div>
+        <div class="organizer-role">Website, benchmark codebase, Codabench platform</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/haodong.jpg" alt="Haodong Feng" class="organizer-photo">
+        <div class="organizer-name">Haodong Feng</div>
+        <div class="organizer-affil">Westlake University · ZGCAI</div>
+        <div class="organizer-role">Dataset, evaluation design, baselines</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/ruiqi.jpeg" alt="Ruiqi Feng" class="organizer-photo">
+        <div class="organizer-name">Ruiqi Feng</div>
+        <div class="organizer-affil">Westlake University</div>
+        <div class="organizer-role">Evaluation pipeline, baselines</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/tianrun.jpg" alt="Tianrun Gao" class="organizer-photo">
+        <div class="organizer-name">Tianrun Gao</div>
+        <div class="organizer-affil">Tongji University · Fudan University</div>
+        <div class="organizer-role">Evaluation pipelines, baselines</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/peiyan.jpeg" alt="Peiyan Hu" class="organizer-photo">
+        <div class="organizer-name">Peiyan Hu</div>
+        <div class="organizer-affil">AMSS, CAS · Westlake University</div>
+        <div class="organizer-role">Coordination, data, evaluation, proposal</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/hongyuan.jpg" alt="Hongyuan Liu" class="organizer-photo">
+        <div class="organizer-name">Hongyuan Liu</div>
+        <div class="organizer-affil">Westlake University</div>
+        <div class="organizer-role">Data measurement and preparation</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/tengfei.jpg" alt="Tengfei Xu" class="organizer-photo">
+        <div class="organizer-name">Tengfei Xu</div>
+        <div class="organizer-affil">Westlake University</div>
+        <div class="organizer-role">Safe metrics design, evaluation pipeline</div>
+      </div>
+    </div>
+
+    <h3 class="organizer-group-title">Scientific Advisors</h3>
+    <div class="organizer-grid">
+      <div class="organizer-card">
+        <img src="img/xinyu.jpeg" alt="Xinyu Yang" class="organizer-photo">
+        <div class="organizer-name">Xinyu Yang</div>
+        <div class="organizer-affil">IHPC, A*STAR</div>
+        <div class="organizer-role">Agent-enhanced adaptation; scientific advisor</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/zongyi.jpg" alt="Zongyi Li" class="organizer-photo">
+        <div class="organizer-name">Zongyi Li</div>
+        <div class="organizer-affil">New York University</div>
+        <div class="organizer-role">Scientific advisor</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/johannes.jpg" alt="Johannes Brandstetter" class="organizer-photo">
+        <div class="organizer-name">Johannes Brandstetter</div>
+        <div class="organizer-affil">Emmi AI · JKU Linz</div>
+        <div class="organizer-role">Scientific advisor</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/roseyu.png" alt="Rose Yu" class="organizer-photo">
+        <div class="organizer-name">Rose Yu</div>
+        <div class="organizer-affil">UC San Diego · Amazon Scholar</div>
+        <div class="organizer-role">Scientific advisor</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/nils.jpg" alt="Nils Thuerey" class="organizer-photo">
+        <div class="organizer-name">Nils Thuerey</div>
+        <div class="organizer-affil">TU Munich</div>
+        <div class="organizer-role">Scientific advisor</div>
+      </div>
+      <div class="organizer-card">
+        <img src="img/anima.jpeg" alt="Anima Anandkumar" class="organizer-photo">
+        <div class="organizer-name">Anima Anandkumar</div>
+        <div class="organizer-affil">Caltech</div>
+        <div class="organizer-role">Scientific advisor</div>
+      </div>
+    </div>
+
     <div class="divider"></div>
     <p style="text-align:center; font-size:0.9rem; color: var(--slate);">
       Organized by the <a href="https://ai4s.lab.westlake.edu.cn/" target="_blank">AI for Scientific Simulation and Discovery Lab</a>, Westlake University, and collaborators.
     </p>
     <p style="text-align:center; font-size:0.9rem; color: var(--slate); margin-top: 8px;">
-      Compute infrastructure: 8× A6000 GPUs sponsored by organizers for Codabench evaluation.
+      Compute infrastructure: 8× NVIDIA A100 GPUs sponsored by the organizers for Codabench evaluation.
     </p>
   </div>
 </section>
@@ -374,7 +473,7 @@
       <a href="#">Discord</a>
       <a href="mailto:wutailin@westlake.edu.cn">Contact</a>
     </div>
-    <p>&copy; 2026 RealPDE Challenge &middot; NeurIPS 2026 Competition Track</p>
+    <p>&copy; 2026 RealPDE Competition &middot; NeurIPS 2026 Competition Track</p>
     <p style="margin-top: 4px;">
       AI for Scientific Simulation and Discovery Lab, Westlake University
     </p>
